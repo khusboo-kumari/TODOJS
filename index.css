@@ -1,0 +1,166 @@
+/* Updated CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.headerPart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 100px;
+}
+
+.headerPart, input {
+    width: 600px;
+    height: 55px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #f2f2f2;
+}
+
+.headerPart button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.headerPart button:hover {
+    background-color: #3e8e41;
+}
+
+.todoList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 100px;
+}
+
+input {
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.task-container {
+    padding: 6px;
+    height: auto; /* Adjust height for longer content */
+    overflow: auto;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: auto;
+}
+
+.task-items {
+    border: 3px rgb(73, 95, 125) solid;
+    width: 600px;
+    height: auto;
+    min-height: 55px; /* To ensure the task items are at least this tall */
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden; /* Prevents overflow of the task items */
+    flex-wrap: wrap; /* Allows wrapping for long tasks */
+}
+
+.task-items span {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 21px;
+    cursor: pointer;
+    word-wrap: break-word; /* Ensures long words break */
+    word-break: break-word; /* Ensures long words break */
+}
+
+.task-items img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    .headerPart, input {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .task-items {
+        width: 90%;
+    }
+
+    .task-container {
+        height: auto;
+    }
+
+    .todoList {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .headerPart, input {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .task-items {
+        width: 100%;
+    }
+
+    .task-items span {
+        font-size: 18px;
+    }
+
+    .task-items img {
+        width: 20px;
+        height: 20px;
+    }
+}
