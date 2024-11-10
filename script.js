@@ -122,6 +122,7 @@ input.addEventListener("keydown", (e) => {
 
         taskContainer.append(span, img1, img2, img3); 
         todoList.append(taskContainer); 
+        todoList.insertBefore(taskContainer, todoList.firstChild);  // Move to the top of the list when added 
 
         syncTask();
     }
