@@ -34,6 +34,11 @@ input.addEventListener("keydown", (e) => {
     });
 
     function addTask(task, status = false) {
+        task = task.trim();
+        if (!task) {  // Check if task is empty or whitespace-only
+            alert("Task cannot be blank!");
+            return;  // Exit the function if task is invalid
+        }
         const taskContainer = document.createElement('div');
         taskContainer.classList.add("task-items");
 
@@ -53,11 +58,7 @@ input.addEventListener("keydown", (e) => {
         img2.alt = "delete"; 
         img3.alt = "edit";  // edit  
 
-        // img1.addEventListener("click", () => {
-        //     console.log("checked");
-        //     img1.src = img1.src.includes("incomplete") ? "https://img.icons8.com/ios-filled/50/000000/checkmark.png" : "https://img.icons8.com/?size=100&id=11221&format=png&color=40C057";
-        //     syncTask();
-        // });
+     
         img1.addEventListener("click", () => {
             console.log("checked");
         
@@ -65,9 +66,11 @@ input.addEventListener("keydown", (e) => {
             if (img1.src.includes("checkmark.png")) {
                 // If the current image is the incomplete state, switch to completed (green check)
                 img1.src = "https://img.icons8.com/?size=100&id=11221&format=png&color=40C057";
+                todoList.appendChild(taskContainer);
             } else {
                 // If the current image is the green check, switch back to the incomplete state
                 img1.src = "https://img.icons8.com/ios-filled/50/000000/checkmark.png";
+                todoList.insertBefore(taskContainer, todoList.firstChild); // Move to the top of the list when unchecked 
             }
         
             syncTask();
